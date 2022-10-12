@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pacifico', cursive;
+        }
+
+        #wrapper {
+            margin-top: 300px;
+            text-align: center;
+        }
+
+        #hex {
+            display: block;
+            font-size: 2.5rem;
+        }
+
+        button {
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 1rem;
+            color: white;
+            background-color: rgb(48, 53, 36);
+            border-radius: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <p id="hex">Life is a Rainbow.</p><br>
+        <button onclick="newcolor()">Generate Color Code</button>
+    </div>
+    <script>
+        function newcolor() {
+            let symbol = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color = color + symbol[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.background = color;
+            document.getElementById('hex').innerHTML = color;
+        }
+    </script>
+</body>
+
+</html>
